@@ -1,3 +1,5 @@
+//Este algoritimo solicita ao usuário entrar com o valor do raio, e no final imprime o comprimento da circunferência.
+
 import java.util.Scanner;
 
 public class compcircunferencia {
