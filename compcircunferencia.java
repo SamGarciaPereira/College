@@ -1,4 +1,4 @@
-//Este algoritimo solicita ao usuário entrar com o valor do raio, e no final imprime o comprimento da circunferência.
+//Este algoritimo solicita ao usuário entrar com o valor do raio, e ao final imprime o comprimento da circunferência
 
 import java.util.Scanner;
 
