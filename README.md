@@ -1,3 +1,3 @@
-# java_repo
+# College
 
-Este é um repósitório onde somente programas em java feitos por mim serão exibidos.
+Programs developed in java that I've made in college classes/homeworks.
