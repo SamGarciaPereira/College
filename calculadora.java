@@ -1,81 +1,51 @@
-package br.com.unicuritiba.calculadora;
+package samukacalculator;
 
 import java.util.Scanner;
 
-public class calculadora {
+public class Main {
 
 	public static void main(String[] args) {
+
 		Scanner input = new Scanner(System.in);
 		
-		System.out.println("Insira a operação desejada: ");
-		System.out.println("1 - Soma");
-		System.out.println("2 - Subtração");
-		System.out.println("3 - Multiplicação");
-		System.out.println("4 - Divisão");
+		System.out.println("Bem vindo Ã  calculadora inteligente! Escolha a operaÃ§Ã£o desejada e insira dois nÃºmeros e lhe darei o resultado!\n");
+		System.out.println("Escolha a operaÃ§Ã£o desejada: \n1 - AdiÃ§Ã£o\n2 - SubtraÃ§Ã£o\n3 - MultiplicaÃ§Ã£o\n4 - DivisÃ£o");
+		int operacao = input.nextInt();
 		
-		int opcao = input.nextInt();
+		System.out.println("Insira o nÃºmero 1: ");
+		double n1 = input.nextDouble();
+		System.out.println("Insira o nÃºmero 2: ");
+		double n2 = input.nextDouble();
+		input.close();
 		
-		while(true) {
-			if(opcao > 4 || opcao < 1) {
-				System.out.println("Opção inválida, tente novamente e insira um número de 1 a 4 para continuar: ");
-				opcao = input.nextInt();			
-			}else{
-				break;
-			}
-		}
+		double resultado = executarOperacoes(n1, n2, operacao);
+		System.out.println("O resultado da operaÃ§Ã£o Ã©: " + resultado);
+	}
+	
+	public static double executarOperacoes(double n1, double n2, int operacao) {
+		Scanner input = new Scanner(System.in);
 		
-		System.out.println("Insira o operador 1: ");
-		double o1 = input.nextDouble();
+		double resultado = 0.0;
 		
-		System.out.println("Insira o operador 2: ");
-		double o2 = input.nextDouble();
-		
-		
-		switch(opcao) {
-			case 1:
-				double resultado = somar(o1, o2);
-				verificaResultado(resultado);
-				break;
-			case 2:
-				resultado = subtrair(o1, o2);
-				verificaResultado(resultado);
-				break;
-			case 3: 
-				resultado = multiplicar(o1, o2);
-				verificaResultado(resultado);
-				break;
-			case 4:
-				resultado = dividir(o1, o2);
-				verificaResultado(resultado);
-				break;
-			default:
-				break;
+		switch(operacao) {
+			
+		case 1:
+			resultado = n1 + n2;
+			break;
+		case 2: 
+			resultado = n1 - n2;
+			break;
+		case 3: 
+			resultado = n1 * n2;
+			break;
+		case 4: 
+			resultado = n1 / n2;
+			break;
+		default:
+			System.out.println("OperaÃ§Ã£o invÃ¡lida, insira um nÃºero entre 1 e 4 e tente novamente: ");
+			operacao = input.nextInt();
 		}
 		input.close();
-	}
-	private static double somar(double o1, double o2) {
-		double resultado = o1 + o2;
-		return resultado;
-	}
-	private static double subtrair(double o1, double o2){
-		double resultado = o1 - o2;
-		return resultado;
-	}
-	private static double multiplicar(double o1, double o2) {
-		double resultado = o1 * o2;
-		return resultado;
-	}
-	private static double dividir(double o1, double o2) {
-		double resultado = o1 / o2;
-		return resultado;
-	}
-	private static double verificaResultado(double resultado) {
-		if(resultado < 300) {
-			System.out.println("O resultado é " + resultado);
-		}else {
-			System.out.println("O resultado é maior que 300.");
-		}
 		return resultado;
 	}
 }
-
